@@ -1,0 +1,60 @@
+use world;
+# question 1
+SELECT count(name) from city where CountryCode='USA';
+#274
+
+#question 2
+SELECT max(population) from country where Name= 'Argentina';
+#'37032000'
+select max(LifeExpectancy) from country where name='Argentina';
+#75.1
+
+#question 3
+SELECT Name, LifeExpectancy from country where LifeExpectancy is not null
+order by lifeExpectancy desc
+limit 5; 
+#'Andorra', '83.5'
+
+#question 4
+SELECT country.name, city.name, capital, id, countrycode
+FROM country AS country
+JOIN city AS city
+ON country.capital=city.id
+WHERE countrycode = 'ESP';
+#'Spain', 'Madrid', '653', '653', 'ESP'
+
+#question 6
+select * from city where name like 'F%' limit 25;
+#'54', 'Fagatogo', 'ASM', 'Tutuila', '2323'
+#'88', 'Florencio Varela', 'ARG', 'Buenos Aires', '315432'
+#110', 'Formosa', 'ARG', 'Formosa', '147636'
+#'205', 'Francistown', 'BWA', 'Francistown', '101805'
+#'210', 'Fortaleza', 'BRA', 'CearÃ¡', '2097757'
+#'236', 'Feira de Santana', 'BRA', 'Bahia', '479992'
+#'269', 'Franca', 'BRA', 'SÃ£o Paulo', '290139'
+#'274', 'FlorianÃ³polis', 'BRA', 'Santa Catarina', '281928'
+#'280', 'Foz do IguaÃ§u', 'BRA', 'ParanÃ¡', '259425'
+#'357', 'Ferraz de Vasconcelos', 'BRA', 'SÃ£o Paulo', '139283'
+#'381', 'Francisco Morato', 'BRA', 'SÃ£o Paulo', '121197'
+#'398', 'Franco da Rocha', 'BRA', 'SÃ£o Paulo', '108964'
+#'684', 'Fuenlabrada', 'ESP', 'Madrid', '171173'
+#'1055', 'Faridabad', 'IND', 'Haryana', '703592'
+#'1143', 'Firozabad', 'IND', 'Uttar Pradesh', '215128'
+#'1157', 'Farrukhabad-cum-Fatehgarh', 'IND', 'Uttar Pradesh', '194567'
+#'1261', 'Faizabad', 'IND', 'Uttar Pradesh', '124437'
+#'1280', 'Fatehpur', 'IND', 'Uttar Pradesh', '117675'
+#'1471', 'Firenze', 'ITA', 'Toscana', '376662'
+#'1488', 'Foggia', 'ITA', 'Apulia', '154891'
+#'1492', 'Ferrara', 'ITA', 'Emilia-Romagna', '132127'
+#'1502', 'ForlÃ¬', 'ITA', 'Emilia-Romagna', '107475'
+#'1539', 'Fukuoka', 'JPN', 'Fukuoka', '1308379'
+#question 7
+SELECT COUNT(ID) FROM city c 
+JOIN country co
+ON c.CountryCode=co.Code where co.name = 'China';
+#363
+#question 8
+SELECT min(population) from country where population is not null
+
+ 
+
